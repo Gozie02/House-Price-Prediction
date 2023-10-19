@@ -19,5 +19,5 @@ bsmt = st.text_input('', 0,10000, key = "basement")
 st.subheader("Enter the first floor square feet")
 firstflr = st.text_input('', 0,10000, key = "floor")
 if st.button("Predict Sale Price"):
-             prediction = model.predict([[quality, bath, year, year_rem, livarea, msnv, bsmt, firstflr]])
+             prediction = model.predict(np.array([[quality, bath, year, year_rem, livarea, msnv, bsmt, firstflr]]))
              st.text(prediction[0])
