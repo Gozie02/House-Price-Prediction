@@ -1,5 +1,6 @@
 import streamlit as st
 import pickle
+import numpy as np
 model = pickle.load(open('RidgeModel.pkl','rb'))
 st.title('Predicting House Sale Value')
 st.markdown('Using indicators to determine how much your house should retail for!')
