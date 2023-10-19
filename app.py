@@ -13,12 +13,10 @@ st.subheader("Enter the year the house was remodeled (same as construction year 
 year_rem = st.number_input('', 0,2024, key = "remodel")
 st.subheader("Enter the living area in square feet")
 livarea = st.number_input('', 0,10000, key = "living")
-st.subheader("Enter the masonry veneer area in square feet")
-msnv = st.number_input('', 0,10000, key = "masonry")
 st.subheader("Enter the total basement area in square feet")
 bsmt = st.number_input('', 0,10000, key = "basement")
 st.subheader("Enter the first floor square feet")
 firstflr = st.number_input('', 0,10000, key = "floor")
 if st.button("Predict Sale Price"):
-             prediction = model.predict(np.array([[quality, bath, year, year_rem, livarea, msnv, bsmt, firstflr]]))
+             prediction = model.predict(np.array([[quality, bath, year, year_rem, livarea, bsmt, firstflr]]))
              st.text(prediction[0])
