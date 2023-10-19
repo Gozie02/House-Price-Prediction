@@ -18,5 +18,6 @@ st.subheader("Enter the total basement area in square feet")
 bsmt = st.text_input('', 0,10000, key = "basement")
 st.subheader("Enter the first floor square feet")
 firstflr = st.text_input('', 0,10000, key = "floor")
-st.subheader("Predicted Sale Price")
-st.code(float(model.predict([[quality, bath, year, year_rem, livarea, msnv, bsmt, firstflr]])))
+if st.button("Predict Sale Price"):
+             prediction = model.predict([[quality, bath, year, year_rem, livarea, msnv, bsmt, firstflr]])
+             st.success('Your predicted house retail price is {}'.format(prediction))
